@@ -177,7 +177,7 @@ let opcion = parseInt(prompt(`Seleccione una opcion:
 4 - Buscar un contacto,
 5 - Eliminar un contacto, 
 6 - Consultar si la agenda esta llena,
-7 - Consultar si la agenda tiene huevos libres,
+7 - Consultar si la agenda tiene huecos libres,
 8-  Cambiar el tamaño de la agenda `))
 
 switch (opcion){

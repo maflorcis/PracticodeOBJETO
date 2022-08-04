@@ -123,7 +123,7 @@ mostrarGeneracion(){
     }
 
   generaDNI(){
-    this.dni = Math.round(Math.random() * (99999999 - 1) + 1);
+    this.dni = Math.round(Math.random() * (99999999 - 1000000) + 1000000);
     document.write('<h3> Tu número de DNI asignado es: ' + this.dni)
   }
 
