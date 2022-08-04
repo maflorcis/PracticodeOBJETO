@@ -85,8 +85,9 @@ cuenta.extraer()
 cuenta.informar()
 */
 
-/* EJERCICIO HECHO POR EMILSE EN CLASES
+//EJERCICIO HECHO POR EMILSE EN CLASES
 
+/*
 let cuenta = {
     titular: 'Alex',
     saldo: 0,
@@ -128,45 +129,72 @@ cuenta.extraer(retiro);
 
 cuenta.informar();
 
+
 */
 
-// AJUSTE EL EJERCICIO CON CLASES 
-
-let deposito = prompt('ingresá un monto a depositar')
-let retiro = prompt('ingresá un monto a retirar')
+// ACÁ VA LA CONSIGNA QUE PIDIÓ EN CLASES EMILSE: AJUSTAR ESTE EJERCICIO USANDO CLASES 
 
 class Cuenta{
-        constructor(titular, saldo){
-            this.titular = titular;
-            this.saldo = saldo;
-        }
-            informar()
-                    {document.write(`<p>La cuenta de ${this.titular}, posee un saldo de $ ${this.saldo}</p>`)
-            
-                     }
-            extraer(retiro){
-                if(this.saldo >= retiro){
-                    this.saldo-= retiro;
-                    document.write(`<p>Se retiro ${retiro}</p>`);
-                }else{
-                    document.write(`<p>saldo insuficiente</p>`);
-                }; 
-                    }
+    constructor(titular, saldo){
+        this.titular = titular;
+        this.saldo = saldo;
+    }
 
-                    ingresar(deposito){
-                        console.log(this);
-                        this.saldo +=deposito;
-                        console.log(`<p>Se ingresó $ ${this.saldo}</p>`);
-                
-                    }
+//creamos get y set
+
+    getTitular(){
+        return this.titular;
+    }
+     
+    setTitular(newtitular){
+        this.titular = newtitular;
+     }
+
+     getSaldo(){
+        return this.saldo;
+    }
+     
+    setSaldo(newsaldo){
+        this.saldo = newsaldo;
+     }
+
+//creamos los métodos
+transferir(){
+    console.log('estamos en el metodo transferir');
+    console.log(this); //this hace referencia al objeto
 }
 
-let alex = new Cuenta ('Alex', '0');
-alex.informar()
+ingresar(){
+    console.log(this.saldo);
+    let deposito = parseFloat(prompt('ingrese el monto deseado'));
+    this.saldo +=deposito;
+    document.write(`<p>Se ingresó $ ${this.saldo}</p>`);
 
-alex.extraer(retiro)
+}
+extraer(){
+    let retiro = parseFloat(prompt('ingrese el monto deseado a extraer'));
+    if(this.saldo >= retiro){
+    this.saldo-= retiro;
+    document.write(`<p>Se retiró $ ${retiro}</p>`);
+}else{
+    document.write(`<p>saldo insuficiente</p>`);
+}; 
+}
 
-alex.ingresar(deposito)
+informar(){ document.write(`<h3>La cuenta de ${this.titular}, posee un saldo de $ ${this.saldo}</h3>`)
+}
 
-alex.informar()
+}
 
+
+//instanciar un objeto 
+
+let cuenta1 = new Cuenta ('Alex', 0)
+
+cuenta1.informar()
+
+cuenta1.ingresar();
+
+cuenta1.extraer();
+
+cuenta1.informar();
