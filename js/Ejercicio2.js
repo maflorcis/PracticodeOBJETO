@@ -10,38 +10,9 @@ Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y vo
 mostrar la descripción del estado de la cuenta.
 Rectángulos*/
 
-/* ASÍ ES COMO LO INTENTE PLANTEAR YO (lo dejo acá para aprender de los errores)
-
-let cuenta = {
-    titular: 'Alex',
-    saldo: 0,
-    
-    ingresar: function(numi) {
-        return this.saldo +numi;
-    },
-    retirar: function(numr) {
-        if(this.saldo<numr){
-            alert('el saldo es menor al monto a retirar')
-        }else{    
-        return this.saldo -numr;
-    }
-},
-estadoDeCuenta: function(){
-    console.log(this.saldo)
-},
-    
-}
 
 
-document.write('<p> El saldo de la cuenta con el ingreso es: '+ cuenta.ingresar(2) + '</p>' );
-
-document.write('<p> El saldo de la cuenta con el retiro es: '+ cuenta.retirar(0) + '</p>' );
-
-document.write('<p> El saldo de la cuenta es: '+ cuenta.saldo + '</p>' );
-
-*/
-
-/* ASÍ ES COMO LO PLANTEAMOS CON MAURI - MEJOR SOLUCIÓN - ELEGIR ESTA SI LA DE LA PROFE NO CUENTA
+/* ASÍ ES COMO LO PLANTEAMOS CON MAURI ANTES DE CLASES
 
 let cuenta = {
     titular: 'Alex',
